@@ -1,16 +1,26 @@
 const tutorials = [
   'what does the this keyword mean?',
-  'What is the Constructor OO pattern?',
-  'implementing Blockchain Web API',
-  'The Test Driven Development Workflow',
-  'What is NaN and how Can we Check for it',
-  'What is the difference between stopPropagation and preventDefault?',
-  'Immutable State and Pure Functions',
+  "What Is The Constructor OO Pattern?",
+  "Implementing Blockchain Web API",
+  'the test driven development workflow',
+  'What Is NaN And How Can We Check For It',
+  'What Is The Difference Between StopPropagation And PreventDefault?',
+  'immutable state and pure functions',
   'what is the difference between == and ===?',
   'what is the difference between event capturing and bubbling?',
-  'what is JSONP?'
+  'What Is JSONP?'
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map(tutorial => {
+    return tutorial
+      .split(' ')
+      .map(word => {
+        // Capitalize first letter and keep the rest as-is
+        return word.replace(/(^\w{1})|\B\w/, match => match.toUpperCase());
+      })
+      .join(' ');
+  });
+};
+// Example usage
+console.log(titleCased());

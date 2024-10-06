@@ -22,5 +22,5 @@ const titleCased = () => {
       .join(' ');
   });
 };
-// Example usage
+
 console.log(titleCased());
